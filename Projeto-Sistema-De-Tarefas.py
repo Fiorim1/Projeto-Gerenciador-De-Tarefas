@@ -4,7 +4,8 @@ while True:
   print('1 - Cadastrar nova tarefa')
   print('2 - Marcar tarefa como concluída')
   print('3 - Relatório Das Tarefas')
-  print('4 - Sair do programa')
+  print('4 - Deletar Tarefa')
+  print('5 - Sair do programa')
   print('»»————-　★　————-««')
 
   opcao = int(input('Qual opção você deseja escolher: '))
@@ -35,12 +36,18 @@ while True:
       print(f'Descrição: {tarefa["descricao"]}')
       print(f'Concluída: {tarefa["concluido"]}')
       print('»»————- ★ ————-««')
-  elif opcao == 4:
+  elif opcao == 5:
     print('»»————- Sistemas De Tarefas ————-««')
     print('»»————- ★ ————-««')
     print('»»————- Obrigado por usar o sistema ★ ————-««')
     print('»»————- ★ ————-««')
     break
+  elif opcao == 4:
+    print('»»————- Deletar Tarefa ————-««')
+    nome = input('Digite o nome da tarefa que deseja deletar: ')
+    for i, tarefa in enumerate(tarefas):
+      if tarefa['nome'] == nome:
+        del tarefas[i]
   else:
     print('Opção inválida!')
     print('»»————- ★ ————-««')
